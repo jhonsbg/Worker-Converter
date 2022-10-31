@@ -14,14 +14,13 @@ def converter():
     # mail.init_app(app)
 
     tareas = db.session.query(Task).filter_by(state='uploaded')
-    print(tareas)
-
-    # if len(tareas) != 0:
-    #     for tarea in tareas:                
-    #         mypath = tarea.path
+    if len(tareas) != 0:
+        for tarea in tareas:                
+            mypath = tarea.path
     #         print("el tipo de variable de mypath es {} y su valor es {}".format(type(mypath),mypath))
-    #         filename = tarea.filename
-    #         newformat = tarea.newformat
+            filename = tarea.filename
+            newformat = tarea.newformat
+            print(mypath + '' + filename + '' + newformat)
     #         try:
     #             print("Hola tarea con id {}, el path es {} para el archivo {} y con el nuevo formato {} \n".format(tarea.id,mypath,filename,newformat))
                 
