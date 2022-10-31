@@ -1,16 +1,20 @@
 from flaskr import create_app
 from .modelos import db, Task
+# from flask_mail import Mail
 
 import subprocess
 
 app = create_app('default')
+# mail = Mail()
 
 @app.cli.command()
 def converter():
-    print('Hello world')
-    # db.init_app(app)
+    # print('Hello world')
+    db.init_app(app)
+    # mail.init_app(app)
 
-    # tareas = db.session.query(Task).filter_by(state='uploaded')
+    tareas = db.session.query(Task).filter_by(state='uploaded')
+    print(tareas)
 
     # if len(tareas) != 0:
     #     for tarea in tareas:                
