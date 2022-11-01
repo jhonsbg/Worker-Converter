@@ -17,8 +17,8 @@ def converter():
     # if len(tareas) != 0:
     for tarea in tareas:                
         # mypath = tarea.path
-        idUser = tarea.iduser
-        mypath = "../../audios/" + tarea.id_usuario
+        idUser = tarea.id_usuario
+        mypath = "../../audios/" + idUser
         print (mypath)
         # print("el tipo de variable de mypath es {} y su valor es {}".format(type(mypath),mypath))
         # filename = tarea.filename
