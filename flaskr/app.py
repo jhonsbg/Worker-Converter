@@ -24,6 +24,8 @@ def converter():
         try:
             # print("Hola tarea con id {}, el path es {} para el archivo {} y con el nuevo formato {} \n".format(tarea.id,mypath,filename,newformat))
             # print("vamos a mirar si permite procesar el cambio de audio")                 
+            
+            print("path donde se actualiza el archivo: " + mypath)                 
 
             lista = "ftransc -f " + str(newformat) + " " + str(filename) + " --force-root -w"
             cmd = ['ftransc', '-f', str(newformat), str(filename), '--force-root','-w']
