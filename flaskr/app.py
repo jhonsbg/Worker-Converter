@@ -23,13 +23,13 @@ def converter():
         filename = tarea.filename
         newformat = tarea.newformat
         try:
-            print("Hola tarea con id {}, el path es {} para el archivo {} y con el nuevo formato {} \n".format(tarea.id,mypath,filename,newformat))
+            # print("Hola tarea con id {}, el path es {} para el archivo {} y con el nuevo formato {} \n".format(tarea.id,mypath,filename,newformat))
             
-        #     print("vamos a mirar si permite procesar el cambio de audio")                 
+            print("vamos a mirar si permite procesar el cambio de audio")                 
 
-        #     lista = "ftransc -f " + str(newformat) + " " + str(filename) + " --force-root -w"
-        #     cmd = ['ftransc', '-f', str(newformat), str(filename), '--force-root','-w']
-        #     print(lista)
+            lista = "ftransc -f " + str(newformat) + " " + str(filename) + " --force-root -w"
+            cmd = ['ftransc', '-f', str(newformat), str(filename), '--force-root','-w']
+            print(lista)
         #     subprocess.call(cmd,cwd=mypath)                    
         #     print("formato actualizado")
         #     tarea.state="procesed"
