@@ -29,11 +29,11 @@ def converter():
 
             lista = "ftransc -f " + str(newformat) + " " + str(filename) + " --force-root -w"
             cmd = ['ftransc', '-f', str(newformat), str(filename), '--force-root','-w']
-            print(lista)
-        #     subprocess.call(cmd,cwd=mypath)                    
-        #     print("formato actualizado")
-        #     tarea.state="procesed"
-        #     db.session.add(tarea)
-        #     db.session.commit()
+            # print(lista)
+            subprocess.call(cmd,cwd=mypath)                    
+            print("formato actualizado")
+            tarea.state="procesed"
+            db.session.add(tarea)
+            db.session.commit()
         except:
             print("Error con la tarea que tiene id {}".format(tarea.id))
