@@ -19,12 +19,11 @@ def converter():
         # mypath = tarea.path
         idUser = tarea.id_usuario
         mypath = "../../audios/" + str(idUser)
-        print("el tipo de variable de mypath es {} y su valor es {}".format(type(mypath),mypath))
-        # filename = tarea.filename
-        # newformat = tarea.newformat
-        # # print(mypath + '' + filename + '' + newformat)
-        # try:
-        #     print("Hola tarea con id {}, el path es {} para el archivo {} y con el nuevo formato {} \n".format(tarea.id,mypath,filename,newformat))
+        # print("el tipo de variable de mypath es {} y su valor es {}".format(type(mypath),mypath))
+        filename = tarea.filename
+        newformat = tarea.newformat
+        try:
+            print("Hola tarea con id {}, el path es {} para el archivo {} y con el nuevo formato {} \n".format(tarea.id,mypath,filename,newformat))
             
         #     print("vamos a mirar si permite procesar el cambio de audio")                 
 
@@ -36,5 +35,5 @@ def converter():
         #     tarea.state="procesed"
         #     db.session.add(tarea)
         #     db.session.commit()
-        # except:
-        #     print("Error con la tarea que tiene id {}".format(tarea.id))
+        except:
+            print("Error con la tarea que tiene id {}".format(tarea.id))
