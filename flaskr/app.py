@@ -19,8 +19,7 @@ def converter():
         # mypath = tarea.path
         idUser = tarea.id_usuario
         mypath = "../../audios/" + str(idUser)
-        print (mypath)
-        # print("el tipo de variable de mypath es {} y su valor es {}".format(type(mypath),mypath))
+        print("el tipo de variable de mypath es {} y su valor es {}".format(type(mypath),mypath))
         # filename = tarea.filename
         # newformat = tarea.newformat
         # # print(mypath + '' + filename + '' + newformat)
