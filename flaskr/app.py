@@ -72,7 +72,7 @@ def converter():
                 # Audio convert
                 cmd = ['ftransc', '-f', str(newformat), str(filename), '--force-root','-w']
                 # fecha_inicio = datetime.utcnow()
-                subprocess.call(cmd,cwd=mypath)                    
+                subprocess.call(cmd)                    
                 print("Formato actualizado")
 
                 # Save the file in Bucket of GCP
@@ -98,7 +98,7 @@ def converter():
             except:
                 print("Error con la tarea que tiene id")
 
-                
+
     with subscriber:                                                # wrap subscriber in a 'with' block to automatically call close() when done
         try:
             # streaming_pull_future.result(timeout=timeout)
