@@ -36,6 +36,9 @@ def converter():
 
         message.ack()
 
+    streaming_pull_future = subscriber.subscribe(subscription_path, callback=callback)
+    print(f'Listening for messages on {subscription_path}')
+    
     with subscriber:                                                # wrap subscriber in a 'with' block to automatically call close() when done
         try:
             # streaming_pull_future.result(timeout=timeout)
@@ -44,8 +47,6 @@ def converter():
             streaming_pull_future.cancel()                          # trigger the shutdown
             streaming_pull_future.result()   
 
-    streaming_pull_future = subscriber.subscribe(subscription_path, callback=callback)
-    print(f'Listening for messages on {subscription_path}')
 
     # Database Query
     #tareas = db.session.query(Task).filter_by(state='uploaded')
