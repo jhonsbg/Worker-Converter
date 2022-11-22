@@ -38,18 +38,6 @@ def converter():
 
     streaming_pull_future = subscriber.subscribe(subscription_path, callback=callback)
     print(f'Listening for messages on {subscription_path}')
-    
-    with subscriber:                                                # wrap subscriber in a 'with' block to automatically call close() when done
-        try:
-            # streaming_pull_future.result(timeout=timeout)
-            streaming_pull_future.result()                          # going without a timeout will wait & block indefinitely
-        except TimeoutError:
-            streaming_pull_future.cancel()                          # trigger the shutdown
-            streaming_pull_future.result()   
-
-
-    # Database Query
-    #tareas = db.session.query(Task).filter_by(state='uploaded')
 
     def audioConverter(idUser, fileName, newFormat):
             # Declare variables
@@ -109,3 +97,17 @@ def converter():
                 #db.session.commit()
             except:
                 print("Error con la tarea que tiene id")
+
+                
+    with subscriber:                                                # wrap subscriber in a 'with' block to automatically call close() when done
+        try:
+            # streaming_pull_future.result(timeout=timeout)
+            streaming_pull_future.result()                          # going without a timeout will wait & block indefinitely
+        except TimeoutError:
+            streaming_pull_future.cancel()                          # trigger the shutdown
+            streaming_pull_future.result()   
+
+
+    # Database Query
+    #tareas = db.session.query(Task).filter_by(state='uploaded')
+
