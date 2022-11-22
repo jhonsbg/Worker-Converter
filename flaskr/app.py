@@ -72,7 +72,7 @@ def converter():
                 # Audio convert
                 cmd = ['ftransc', '-f', str(newformat), str(filename), '--force-root','-w']
                 # fecha_inicio = datetime.utcnow()
-                subprocess.call(cmd)                    
+                subprocess.call(cmd)        
                 print("Formato actualizado")
 
                 # Save the file in Bucket of GCP
@@ -84,7 +84,7 @@ def converter():
                 bucket = storage_client.bucket(bucket_name)
                 blob = bucket.blob(destination_blob_name)
 
-                blob.upload_from_file(request.files["file"], content_type='audio/mpeg')
+                blob.upload_from_filename("./" + new_name_file, content_type='audio/mpeg')
 
                 print(
                     f"{destination_blob_name} with contents {contents} uploaded to {bucket_name}."
