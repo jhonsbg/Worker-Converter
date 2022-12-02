@@ -12,7 +12,8 @@ from google.cloud import pubsub_v1
 
 app = create_app('default')
 
-@app.cli.command()
+# @app.cli.command()
+@app.route('/')
 def converter():
     db.init_app(app)
 
