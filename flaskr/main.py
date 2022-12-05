@@ -1,7 +1,7 @@
-from flaskr import create_app
 from flask import request
-from .modelos import db, Task
 from datetime import datetime
+from flaskr import create_app
+from .modelos import db, Task
 
 from concurrent.futures import TimeoutError
 import subprocess
