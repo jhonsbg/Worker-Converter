@@ -1,7 +1,8 @@
+from flask import Flask
 from flask import request
 from datetime import datetime
-from flaskr import create_app
-from .modelos import db, Task
+# from flaskr import create_app
+from modelos import db, Task
 
 from concurrent.futures import TimeoutError
 import subprocess
@@ -10,7 +11,14 @@ import subprocess
 from google.cloud import storage
 from google.cloud import pubsub_v1
 
-app = create_app('default')
+# app = create_app('default')
+
+app = Flask(__name__)
+
+app.config['UPLOADS_FOLDER'] = 'uploads/audios/2/'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////home/osboxes/Proyecto_cloud/instance/tutorial_canciones.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://andescloud:123456@34.72.155.184:5432/andescloud'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  
 
 # @app.cli.command()
 @app.route('/')
