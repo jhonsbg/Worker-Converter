@@ -1,0 +1,13 @@
+
+service: worker-converter
+runtime: python
+env: flex
+entrypoint: gunicorn --reload wsgi:app -b :$PORT --log-level LEVEL
+runtime_config:
+    python_version: 3.7
+#env_variables:
+   # CLOUD_STORAGE_BUCKET: audio_storage_cloud
+#env_variables:
+ #PORT: 5000
+manual_scaling:
+    instances: 1
